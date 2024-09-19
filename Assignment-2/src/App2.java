@@ -31,7 +31,7 @@ public class App2 {
 
         for (int i = 0; i < mem.length; i++)
             if(max < mem[i]) { 
-                max = mem[i]; // Loops through mem[] to find the max increasing subsequence
+                max = mem[i]; // Loops through mem[] to find the max decreasing subsequence
             }
 
         return max;
