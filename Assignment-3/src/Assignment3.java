@@ -72,7 +72,7 @@ public class Assignment3 {
 
         while(i < leftLength && j < rightLength) { // merges values from least to greatest
             if(leftArr[i] <= rightArr[j]) {
-                UPPairs += (rightLength - j); // increase count of uppair if leftArr value is less than or equal to rightArr value
+                UPPairs += (rightLength - j); // increase count of uppair by rightLength - j if leftArr value is less than or equal to rightArr value
                 arr[k] = leftArr[i];
                 i = i + 1;
             }

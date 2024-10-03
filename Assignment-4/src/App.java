@@ -43,7 +43,7 @@ public class App {
         for(int j = 1; j <= n; j++) { // loops the rod length
             int q = Integer.MIN_VALUE;
             for(int i = 1; i <=j; i++) { // loops the rod cuts
-                if(q < (p[i - 1] + r[j - i])) {
+                if(q < (p[i - 1] + r[j - i])) { // current max revenue < current combination price + revenue of remaining rods
                     q = p[i - 1] + r[j - i]; // updates max revenue
                     s[j] = i; // stores best cut solution in array s
                 }
