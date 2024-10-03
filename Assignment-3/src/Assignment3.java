@@ -18,6 +18,7 @@ public class Assignment3 {
             int fileUPPairs = mergeSort(fileArr, 0, fileArr.length - 1);
             mergeSort(fileArr, 0, fileArr.length - 1);
             System.out.println("UPPairs Array " + (i + 2) + ": " + fileUPPairs);
+            // System.out.println(Arrays.toString(fileArr));
         }
         
     }
@@ -54,8 +55,8 @@ public class Assignment3 {
         int leftLength = q - p + 1;
         int rightLength = r - q;
 
-        int[] leftArr = new int[leftLength]; // initialize leftArr
-        int[] rightArr = new int[rightLength]; // initialize rightArr
+        int[] leftArr = new int[leftLength]; // initialize leftArr 
+        int[] rightArr = new int[rightLength]; // initialize rightArr 
 
         for(int i = 0; i <= leftLength - 1; i++) { // copy elements to leftArr
             leftArr[i] = arr[p+i];
@@ -71,7 +72,7 @@ public class Assignment3 {
 
         while(i < leftLength && j < rightLength) { // merges values from least to greatest
             if(leftArr[i] <= rightArr[j]) {
-                UPPairs++; // increase count of uppair if leftArr value is less than or equal to rightArr value
+                UPPairs += (rightLength - j); // increase count of uppair if leftArr value is less than or equal to rightArr value
                 arr[k] = leftArr[i];
                 i = i + 1;
             }

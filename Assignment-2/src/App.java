@@ -26,7 +26,7 @@ public class App {
             for (int j = 0; j < i; j++) // Loops through indexes [i-1] after every iteration of i. So if i = 1, the loop will only go up until j[0] until i increments from the outer loop.
                 if (seq[i] > seq[j] && mem[i] < mem[j] + 1) { // checks to see if seq[i] is > seq[i-1] and our storage mem[i] < mem[i] + 1.
                     mem[i] = mem[j] + 1; // if condition is true, current index[i] of mem will update to mem[i-1] + 1
-                    
+                
                 }
         for (int i = 0; i < mem.length; i++)
             if(max < mem[i]) { 
