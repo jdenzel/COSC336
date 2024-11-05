@@ -48,19 +48,18 @@ public class App {
         }
 
         for(int i = 0; i < s.length; i++) {
-            maxSum = Math.max(maxSum, s[i]); // makes comparison between maxSum and the values of s[]. Whichever one is greater becomes maxSum
+            if (maxSum < s[i]) 
+                maxSum = s[i]; // loop through s[i] to get the maximum sum of the s[i] array 
         };
 
-        int x = s.length - 1;
-        while(x != -1) {
-            stack.push(seq[x]); // push seq[] values from the saved indexes of p[] into stack
-            x = p[x];
+        for(int i = s.length - 1; i != -1; i = p[i]) { 
+            stack.push(seq[i]); // push seq[i] values from the saved indexes of p[i]
         }
-        // start at end of seq[] x = seq.length - 1 = 5 | seq[5] = 5 | stack = [5]
-        // x = p[5] = 3 from p[-1, 0, 0, 2, 0, 3] | seq[3] = 5 | stack = [5, 5]
-        // x = p[3] = 2 from p[-1, 0, 0, 2, 0, 3] | seq[2] = 5, | stack =[ 5, 5, 5]
-        // x = p[2] = 0 from p[-1, 0, 0, 2, 0, 3] | seq[0] = 1 | stack = [5, 5, 5, 1] 
-        // x = p[0] = -1 from p[-1, 0, 0, 2, 0, 3] | x = -1 end loop
+        // start at end of seq[] i = seq.length - 1 = 5 | seq[5] = 5 | stack = 5
+        // i = p[5] = 3 from p[-1, 0, 0, 2, 0, 3] | seq[3] = 5 | stack = 5, 5
+        // i = p[3] = 2 from p[-1, 0, 0, 2, 0, 3] | seq[2] = 5, | stack = 5, 5, 5 
+        // i = p[2] = 0 from p[-1, 0, 0, 2, 0, 3] | seq[0] = 1 | stack = 5, 5, 5, 1 
+        // i = p[0] = -1 from p[-1, 0, 0, 2, 0, 3] | i = -1 end loop
 
         System.out.println("S array: " + Arrays.toString(s));
         System.out.println("P array: " + Arrays.toString(p));
@@ -71,11 +70,7 @@ public class App {
         for (int i = 0; i < maxSequence.length; i++) {
             maxSequence[i] = stack.pop(); // pop values from stack and return them to maxSequence
         }
-        // maxSequence = [] | stack = [5, 5, 5, 1]
-        // maxSequence = [1] | stack = [5, 5, 5]
-        // maxSequence = [1, 5] | stack = [5, 5]
-        // maxSequence = [1, 5, 5] | stack = [5]
-        // maxSequence = [1, 5, 5, 5] | stack = []
+        //
         
         System.out.println("Maximum increasing sequence: " + Arrays.toString(maxSequence));
 
