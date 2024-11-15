@@ -43,7 +43,7 @@ class App {
     }
 
     // A utility function to do inorder tree traversal
-    static void inorder(Node root)
+    static void inorder(Node root) // prints the inorder traversal of the data
     {
         if (root != null) {
             inorder(root.left);
@@ -52,7 +52,7 @@ class App {
         }
     }
 
-    static void preorder(Node root)
+    static void preorder(Node root) // prints the preorder traversal of the data
     {
         if (root != null) {
             System.out.print("(" + root.key + "," + root.size + ")" +  " ");
@@ -110,7 +110,7 @@ class App {
         if(y.right != null) { // if y ’s right subtree is not empty
             y.right.parent = x; // . . . then x becomes the parent of the subtree’s root
         }
-
+        
         y.parent = x.parent; // x ’s parent becomes y ’s parent
         if(x.parent == null) { // if x was the root 
             // x = y; // . . . then y becomes the root
@@ -180,18 +180,3 @@ class App {
         }
     }
 }
-// Starting BST
-        //      7
-        //     /  \
-        //    3   10
-        //        / \
-        //        9  13
-        //          /
-        //         11
-
-        // After preorder traversal and leftRotate
-        //      10
-        //     /  \
-        //    7   13
-        //   / \  /
-        //  3  9 11 
