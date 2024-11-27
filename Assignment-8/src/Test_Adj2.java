@@ -12,9 +12,9 @@ public class Test_Adj2{
     Adj_List_Graph2 G1 = new Adj_List_Graph2(nodesG1 + 1);
     G1.addEdgeG1(); // adds edges to graph
     G1.printGraph(); // prints adjacency graph
-    G1.shortestPath(1, nodesG1);  // prints the shortest path distance and number of shortest path of each node
-    System.out.println("Array of distances from start node " + Arrays.toString(G1.dist));
-    System.out.println("Array of shortest paths from start node " + Arrays.toString(G1.npath));
+    G1.shortestPath(1, nodesG1); // BFS to get the shortest path and number of shortest paths
+    System.out.println("Array of distances from start node " + Arrays.toString(G1.dist)); // prints the shortest path distance
+    System.out.println("Array of shortest paths from start node " + Arrays.toString(G1.npath)); // prints number of shortest path of each node
     System.out.println("\ndist[" + nodesG1 + "]" + " = " + G1.dist[nodesG1]);
     System.out.println("npath[" + nodesG1 + "]" + " = " + G1.npath[nodesG1]);
 
@@ -27,9 +27,9 @@ public class Test_Adj2{
     Adj_List_Graph2 G2 = new Adj_List_Graph2(nodesG2 + 1);
     G2.addEdgeG2(); // adds edges to graph
     G2.printGraph(); // prints adjacency graph
-    G2.shortestPath(1, nodesG2); // prints the shortest path distance and number of shortest path of each node
-    System.out.println("Array of distances from start node " + Arrays.toString(G2.dist));
-    System.out.println("Array of shortest paths from start node " + Arrays.toString(G2.npath));
+    G2.shortestPath(1, nodesG2); // BFS to get the shortest path and number of shortest paths
+    System.out.println("Array of distances from start node " + Arrays.toString(G2.dist)); // prints the shortest path distance
+    System.out.println("Array of shortest paths from start node " + Arrays.toString(G2.npath)); // prints number of shortest path of each node
     System.out.println("\ndist[" + nodesG2 + "]" + " = " + G2.dist[nodesG2]);
     System.out.println("npath[" + nodesG2 + "]" + " = " + G2.npath[nodesG2]);
     
