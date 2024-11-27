@@ -3,8 +3,8 @@ import java.io.*;
 
   public class Adj_List_Graph2{
     int n;  // no of nodes
-    int[] dist;
-    int[] npath;
+    int[] dist; // array of distances
+    int[] npath; // array of number of paths
     ArrayList<ArrayList<Integer> > adj; 
     //constructor taking as the single parameter the number of nodes
     Adj_List_Graph2(int no_nodes) {
