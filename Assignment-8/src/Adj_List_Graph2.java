@@ -60,8 +60,8 @@ import java.io.*;
         for (int adjNode : adj.get(current)) {
           if (dist[adjNode] == -1) { // if node is unseen
             dist[adjNode] = dist[current] + 1; // set distance of adjacent node to distance of current node + 1 to indicate it has been seen
-            npath[adjNode] = npath[current]; // since the adjacent node has not been seen, it will be set to number of paths of current
             q.add(adjNode); // adds adjacent node to the queue
+            npath[adjNode] = npath[current]; // since the adjacent node has not been seen, it will be set to number of paths of current
           }
           else if (dist[adjNode] == dist[current] + 1) { 
             npath[adjNode] += npath[current]; // since adjacent node has been seen, add number of paths of adjacent nodes to number of paths of current node
