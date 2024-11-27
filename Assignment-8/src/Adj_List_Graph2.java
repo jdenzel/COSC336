@@ -3,6 +3,8 @@ import java.io.*;
 
   public class Adj_List_Graph2{
     int n;  // no of nodes
+    int[] dist;
+    int[] npath;
     ArrayList<ArrayList<Integer> > adj; 
     //constructor taking as the single parameter the number of nodes
     Adj_List_Graph2(int no_nodes) {
@@ -46,8 +48,8 @@ import java.io.*;
       // BFS for finding shortest path from s to v
       Queue<Integer> q = new LinkedList<>(); // intialize queue
       q.add(s); // starting node
-      int[] dist = new int[n]; // initialze array to track distance of starting node to the current node
-      int[] npath = new int[n]; // initialize array to track number of shortest paths based on current node
+      dist = new int[n]; // initialze array to track distance of starting node to the current node
+      npath = new int[n]; // initialize array to track number of shortest paths based on current node
       for (int i = 1; i < n; i++) {
         dist[i] = -1; // sets unseen nodes to -1. Different from bool[] to track distance
         npath[i] = 0; // sets all paths for each node to 0
@@ -68,10 +70,7 @@ import java.io.*;
           }
         }
       }
-      System.out.println("\ndist[" + v + "]" + " = " + dist[v]);
-      System.out.println("npath[" + v + "]" + " = " + npath[v]);
-      System.out.println("Array of distances from start node " + Arrays.toString(dist));
-      System.out.println("Array of shortest paths from start node " + Arrays.toString(npath));
+
     }
 
     // A utility function to add an edge in an
